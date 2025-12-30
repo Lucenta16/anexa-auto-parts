@@ -550,8 +550,11 @@ p {
 }
 
 .brand-logo {
-    height: 45px;
+    height: 40px;
+    min-width: 80px;
+    max-width: 150px;
     width: auto;
+    object-fit: contain;
     opacity: 1;
 }
 
