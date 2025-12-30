@@ -306,35 +306,43 @@ p {
 /* Brands Section */
 .brands {
     background: var(--color-bg-secondary);
+    overflow: hidden;
 }
 
-.brands-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 20px;
-    max-width: 900px;
-    margin: 0 auto;
+.brands-slider {
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
 }
 
-.brand-item {
-    background: var(--color-bg-tertiary);
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-    padding: 28px 20px;
-    text-align: center;
+.brands-track {
+    display: flex;
+    gap: 60px;
+    animation: scrollBrands 30s linear infinite;
+    width: max-content;
+}
+
+.brand-logo {
+    height: 50px;
+    width: auto;
+    filter: grayscale(100%);
+    opacity: 0.7;
     transition: var(--transition-smooth);
 }
 
-.brand-item:hover {
-    border-color: rgba(107, 138, 173, 0.3);
-    transform: translateY(-2px);
+.brand-logo:hover {
+    filter: grayscale(0%);
+    opacity: 1;
 }
 
-.brand-name {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--color-text-primary);
-    letter-spacing: 0.02em;
+@keyframes scrollBrands {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 /* Categories Section */
