@@ -187,6 +187,41 @@ body {
     .nav-container {
         flex-wrap: wrap;
     }
+
+    /* Hero Mobile */
+    .hero {
+        min-height: 100svh;
+        padding-top: 80px;
+    }
+
+    .hero-content {
+        padding: 20px;
+        margin-bottom: 60px;
+    }
+
+    .hero-headline {
+        font-size: 1.8rem;
+    }
+
+    .hero-subheadline {
+        font-size: 0.95rem;
+    }
+
+    .world-map-bg,
+    .world-map {
+        width: 200%;
+        min-width: 800px;
+    }
+
+    /* About Story Mobile */
+    .about-story {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .story-chapter {
+        padding: 24px;
+    }
 }
 
 /* Container */
