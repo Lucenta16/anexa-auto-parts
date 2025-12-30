@@ -1,0 +1,587 @@
+/* CSS Variables */
+:root {
+    --color-bg-primary: #0d1117;
+    --color-bg-secondary: #161b22;
+    --color-bg-tertiary: #1c2128;
+    --color-text-primary: #e6edf3;
+    --color-text-secondary: #8b949e;
+    --color-text-muted: #6e7681;
+    --color-accent: #6b8aad;
+    --color-accent-hover: #7d9fc4;
+    --color-border: rgba(255, 255, 255, 0.08);
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reset & Base */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Container */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--color-text-primary);
+}
+
+p {
+    color: var(--color-text-secondary);
+}
+
+/* Section Base */
+.section {
+    padding: 100px 0;
+    position: relative;
+}
+
+.section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 800px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+}
+
+.section:last-of-type::after {
+    display: none;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 40px;
+    text-align: center;
+    letter-spacing: -0.02em;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--color-bg-primary) 0%, #0a1628 50%, var(--color-bg-primary) 100%);
+}
+
+.hero-map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.world-map-bg {
+    position: absolute;
+    width: 140%;
+    height: auto;
+    min-width: 1200px;
+    opacity: 0.35;
+    filter: invert(1) brightness(1.2);
+    pointer-events: none;
+}
+
+.world-map {
+    position: absolute;
+    width: 140%;
+    height: auto;
+    min-width: 1200px;
+    z-index: 2;
+}
+
+/* Map Styling */
+.map-outline path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: drawMap 3s ease-out forwards;
+}
+
+@keyframes drawMap {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* Location Dots */
+.dot {
+    fill: var(--color-accent);
+    opacity: 0;
+    animation: fadeInDot 0.5s ease-out forwards;
+}
+
+.dot-sf {
+    animation-delay: 1.2s;
+}
+
+.dot-nj {
+    animation-delay: 1.4s;
+}
+
+.dot-brazil {
+    animation-delay: 1.6s;
+}
+
+.dot-portugal {
+    animation-delay: 1.8s;
+}
+
+.dot-germany {
+    animation-delay: 2s;
+}
+
+.dot-turkey {
+    animation-delay: 2.2s;
+}
+
+@keyframes fadeInDot {
+    to {
+        opacity: 1;
+    }
+}
+
+.dot-pulse {
+    fill: var(--color-accent);
+    opacity: 0;
+    transform-origin: center;
+    animation: pulse 2.5s ease-out infinite;
+}
+
+
+@keyframes pulse {
+    0% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(2.5);
+    }
+}
+
+/* Arrow Paths */
+.arrow-path {
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 2000;
+    animation: drawArrow 2s ease-out forwards;
+}
+
+.arrows path:nth-child(1) {
+    animation-delay: 1.5s;
+}
+
+.arrows path:nth-child(2) {
+    animation-delay: 1.7s;
+}
+
+.arrows path:nth-child(3) {
+    animation-delay: 1.9s;
+}
+
+.arrows path:nth-child(4) {
+    animation-delay: 2.1s;
+}
+
+.arrows path:nth-child(5) {
+    animation-delay: 2.3s;
+}
+
+.arrows path:nth-child(6) {
+    animation-delay: 2.5s;
+}
+
+.arrows path:nth-child(7) {
+    animation-delay: 2.7s;
+}
+
+@keyframes drawArrow {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* Hero Content */
+.hero-content {
+    position: relative;
+    z-index: 10;
+    text-align: left;
+    padding: 60px 80px;
+    max-width: 700px;
+    margin-bottom: 80px;
+}
+
+.hero-headline {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    margin-bottom: 24px;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+    background: linear-gradient(135deg, var(--color-text-primary) 0%, var(--color-accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-subheadline {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: var(--color-text-secondary);
+    max-width: 600px;
+    margin: 0;
+    line-height: 1.8;
+}
+
+/* About Section */
+.about {
+    background: var(--color-bg-secondary);
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-content p {
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+}
+
+.about-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Supply Network Section */
+.supply-network {
+    background: var(--color-bg-primary);
+}
+
+.network-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.network-content p {
+    font-size: 1.05rem;
+}
+
+/* Brands Section */
+.brands {
+    background: var(--color-bg-secondary);
+}
+
+.brands-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.brand-item {
+    background: var(--color-bg-tertiary);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 28px 20px;
+    text-align: center;
+    transition: var(--transition-smooth);
+}
+
+.brand-item:hover {
+    border-color: rgba(107, 138, 173, 0.3);
+    transform: translateY(-2px);
+}
+
+.brand-name {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--color-text-primary);
+    letter-spacing: 0.02em;
+}
+
+/* Categories Section */
+.categories {
+    background: var(--color-bg-primary);
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.category-card {
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    padding: 32px;
+    transition: var(--transition-smooth);
+}
+
+.category-card:hover {
+    border-color: rgba(107, 138, 173, 0.3);
+}
+
+.category-card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--color-text-primary);
+}
+
+.category-card p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+}
+
+/* Why Anexa Section */
+.why-anexa {
+    background: var(--color-bg-secondary);
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 32px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.why-item {
+    text-align: center;
+    padding: 24px;
+}
+
+.why-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 20px;
+    color: var(--color-accent);
+}
+
+.why-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.why-item h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.why-item p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+/* Contact Section */
+.contact {
+    background: var(--color-bg-primary);
+}
+
+.contact-content {
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contact-content p {
+    margin-bottom: 32px;
+    font-size: 1.05rem;
+}
+
+.ebay-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--color-accent);
+    color: var(--color-bg-primary);
+    padding: 16px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: var(--transition-smooth);
+}
+
+.ebay-button:hover {
+    background: var(--color-accent-hover);
+    transform: translateY(-2px);
+}
+
+.ebay-button .arrow-icon {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.2s ease;
+}
+
+.ebay-button:hover .arrow-icon {
+    transform: translate(3px, -3px);
+}
+
+/* Footer */
+.footer {
+    background: var(--color-bg-tertiary);
+    padding: 60px 0 30px;
+    border-top: 1px solid var(--color-border);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-brand h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.footer-brand p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+.footer-disclaimer p {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+}
+
+.footer-bottom {
+    padding-top: 30px;
+    border-top: 1px solid var(--color-border);
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+}
+
+/* Fade-in Animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .section {
+        padding: 70px 0;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+        margin-bottom: 32px;
+    }
+
+    .hero-content {
+        padding: 24px;
+    }
+
+    .hero-headline {
+        font-size: 1.8rem;
+    }
+
+    .hero-subheadline {
+        font-size: 1rem;
+    }
+
+    .brands-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .categories-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    .section {
+        padding: 50px 0;
+    }
+
+    .brands-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .brand-item {
+        padding: 20px 12px;
+    }
+
+    .category-card {
+        padding: 24px;
+    }
+
+    .ebay-button {
+        padding: 14px 24px;
+        font-size: 0.95rem;
+    }
+}
