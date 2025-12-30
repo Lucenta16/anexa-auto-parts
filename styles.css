@@ -874,6 +874,12 @@ p {
     margin-bottom: 12px;
 }
 
+.footer-brand h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
 .footer-brand p {
     font-size: 0.9rem;
     color: var(--color-text-muted);
