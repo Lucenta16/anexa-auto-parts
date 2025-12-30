@@ -92,8 +92,8 @@ p {
     position: relative;
     min-height: 100vh;
     display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
     background: linear-gradient(135deg, var(--color-bg-primary) 0%, #e8f0f8 50%, var(--color-bg-primary) 100%);
 }
@@ -243,10 +243,9 @@ p {
 .hero-content {
     position: relative;
     z-index: 10;
-    text-align: left;
-    padding: 60px 80px;
+    text-align: center;
+    padding: 40px;
     max-width: 700px;
-    margin-bottom: 80px;
 }
 
 .hero-headline {
@@ -265,7 +264,7 @@ p {
     font-size: clamp(1rem, 2vw, 1.25rem);
     color: var(--color-text-secondary);
     max-width: 600px;
-    margin: 0;
+    margin: 0 auto;
     line-height: 1.8;
 }
 
