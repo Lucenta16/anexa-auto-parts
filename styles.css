@@ -550,9 +550,9 @@ p {
 }
 
 .brand-logo {
-    height: 40px;
-    min-width: 80px;
-    max-width: 150px;
+    height: 55px;
+    min-width: 120px;
+    max-width: 180px;
     width: auto;
     object-fit: contain;
     opacity: 1;
