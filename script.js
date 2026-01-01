@@ -17,6 +17,24 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// Products Slider Navigation
+document.addEventListener("DOMContentLoaded", function () {
+  const productsTrack = document.getElementById("products-track");
+  const prevBtn = document.querySelector(".slider-prev");
+  const nextBtn = document.querySelector(".slider-next");
+  const slideWidth = 324; // 300px slide + 24px gap
+
+  if (prevBtn && nextBtn && productsTrack) {
+    prevBtn.addEventListener("click", function () {
+      productsTrack.scrollBy({ left: -slideWidth, behavior: "smooth" });
+    });
+
+    nextBtn.addEventListener("click", function () {
+      productsTrack.scrollBy({ left: slideWidth, behavior: "smooth" });
+    });
+  }
+});
+
 // Intersection Observer for fade-in animations
 document.addEventListener("DOMContentLoaded", function () {
   const fadeElements = document.querySelectorAll(".fade-in");

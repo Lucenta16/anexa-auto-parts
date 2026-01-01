@@ -269,6 +269,7 @@ p {
 .hero {
     position: relative;
     min-height: 100vh;
+    padding-top: 80px;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -427,6 +428,16 @@ p {
     margin-bottom: 100px;
 }
 
+.hero-brand {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
 .hero-headline {
     font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 700;
@@ -575,6 +586,43 @@ p {
     width: 100%;
     overflow: hidden;
     padding: 20px 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--color-bg-primary);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-primary);
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: var(--transition-smooth);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.slider-btn:hover {
+    background: var(--color-accent);
+    color: white;
+    border-color: var(--color-accent);
+}
+
+.slider-prev {
+    left: 20px;
+}
+
+.slider-next {
+    right: 20px;
 }
 
 .products-track {
